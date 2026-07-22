@@ -1,0 +1,59 @@
+class Stack:
+    def __init__(self, limit):
+        self.items = []
+        self.limit = limit
+
+    def push(self, num):
+        if len(self.items) >= self.limit:
+            print("Stack is full")
+        else:
+            self.items.append(num)
+            print("Added:", num)
+
+    def pop(self):
+        if len(self.items) == 0:
+            print("Stack is empty")
+        else:
+            print("Removed:", self.items.pop())
+
+    def top(self):
+        if len(self.items) == 0:
+            print("Stack is empty")
+        else:
+            print("Top:", self.items[-1])
+
+    def show(self):
+        print("Stack:", self.items)
+
+
+size = int(input("Enter stack size: "))
+stack = Stack(size)
+
+while True:
+    print("\n1. Add")
+    print("2. Remove")
+    print("3. View Top")
+    print("4. Show Stack")
+    print("5. Exit")
+
+    choice = int(input("Choose: "))
+
+    if choice == 1:
+        value = int(input("Enter number: "))
+        stack.push(value)
+
+    elif choice == 2:
+        stack.pop()
+
+    elif choice == 3:
+        stack.top()
+
+    elif choice == 4:
+        stack.show()
+
+    elif choice == 5:
+        print("Program ended")
+        break
+
+    else:
+        print("Wrong choice")
