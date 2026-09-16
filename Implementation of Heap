@@ -1,0 +1,17 @@
+import heapq
+Jobs=[]
+heapq.heappush(Jobs,(-3,"Jobs A"))
+heapq.heappush(Jobs,(-5,"Jobs B"))
+heapq.heappush(Jobs,(-1,"Jobs C"))
+heapq.heappush(Jobs,(-4,"Jobs D"))
+print("Job in Heap order:")
+for priority , Job in Jobs:
+    print(Job,"priority:",-priority)
+print("\n Highest priority Job:",Jobs[0][1])
+print("priority:",-Jobs[0][0])
+priority,Job = heapq.heappop(Jobs)
+print("\n processed Job:",Job)
+print("priority:",-priority)
+print("\n Remaining Jobs:")
+for priority,Job in Jobs:
+    print(Job,"priority:",-priority)
